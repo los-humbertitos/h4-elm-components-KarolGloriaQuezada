@@ -1,8 +1,8 @@
 module Helper exposing (..)
 
 import Char
-import Html exposing (Html, a, div, h1, h2, h3, h4, h5, h6, text)
-import Html.Attributes exposing (href)
+import Html
+import Html.Attributes
 
 
 joinWords : String -> String -> String
@@ -20,19 +20,19 @@ evalChars list funTrans =
     List.map funTrans list
 
 
-headers : String -> Html msg
+headers : String -> Html.Html msg
 headers param =
-    div []
-        [ h1 [] [ text param ]
-        , h2 [] [ text param ]
-        , h3 [] [ text param ]
-        , h4 [] [ text param ]
-        , h5 [] [ text param ]
-        , h6 [] [ text param ]
+    Html.div []
+        [ Html.h1 [] [ Html.text param ]
+        , Html.h2 [] [ Html.text param ]
+        , Html.h3 [] [ Html.text param ]
+        , Html.h4 [] [ Html.text param ]
+        , Html.h5 [] [ Html.text param ]
+        , Html.h6 [] [ Html.text param ]
         ]
 
 
-hyperlink : String -> String -> Html msg
+hyperlink : String -> String -> Html.Html msg
 hyperlink url label =
-    a [ href url ]
-        [ text label ]
+    Html.a [ Html.Attributes.href url ]
+        [ Html.text label ]
